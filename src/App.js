@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  Hero,
+  Navbar,
+  About,
+  Tech,
+  Experience,
+  Projects,
+  Feedbacks,
+  Contact,
+  StarsCanvas,
+  Slider,
+} from "./components";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="relative z-0 bg-primary overflow-y-hidden">
+        <Navbar/>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="bg-hero-pattern bg-no-repeat bg-cover bg-center">
+             <Hero />
+              </div>
+            }
+          />
+
+          <Route path="/about" element={<About  />} />
+
+          <Route
+            path="/work"
+            element={
+              <div>
+                <Tech />
+                <Experience />
+              </div>
+            }
+          />
+
+          <Route path="/projects" element={<Projects />} />
+
+          <Route
+            path="/contact"
+            element={
+              <div className="top-0 right-0 relative z-22">
+                <Contact />
+                <StarsCanvas />
+              </div>
+            }
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
