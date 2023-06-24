@@ -3,30 +3,7 @@ import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { github } from "../../assets";
 import { fadeIn } from "../../utils/motion";
-
-const TagImg = ({ icon, name }) => {
-  const [display, setDisplay] = useState(false);
-
-  return (
-    <div
-      className="flex flex-col-reverse justify-center items-center relative"
-      onMouseEnter={() => setDisplay(true)}
-      onMouseLeave={() => setDisplay(false)}
-    >
-      <img src={icon} alt={name} key={name} className="h-[40px] w-[40px]" />
-
-      {display && (
-        <span
-          className="w-fit h-fit inline-block
-     bg-white font-semibold text-center
-     text-[12px] px-2 text-black rounded-3xl absolute top-[-15px]"
-        >
-          {name}
-        </span>
-      )}
-    </div>
-  );
-};
+import TagImg from "./tagsImg.jsx"
 
 const ProjectCard = ({
   index,

@@ -19,7 +19,7 @@ const Experience = () => {
       viewport={{ once: true, amount: 0.25 }}
       className={`${styles.padding} max-w-7xl z-0`}
     >
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant()} id="timeline">
         <p className={styles.heroSubText}>What i have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience</h2>
       </motion.div>
